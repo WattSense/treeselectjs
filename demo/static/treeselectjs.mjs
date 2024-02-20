@@ -32,7 +32,7 @@ const Vt = {
     e[t] || (e[t] = Vt[t]);
   }), e;
 }, mi = (l) => l.reduce((e, { name: t }, s) => (e += t, s < l.length - 1 && (e += ", "), e), "");
-var _, k, H, E, pe, Mt, G, U, me, Ft, fe, qt, M, Y, T, D, Ce, zt, be, jt, ge, Rt, ke, $t, we, Wt, ve, Ut, Ee, Yt, Le, Kt, ye, Xt, Se, Jt, xe, Zt, _e, Qt, Ae, es, Oe, ts, Ne, ss, Te, is, K, vt;
+var _, k, H, E, pe, Mt, G, U, me, Ft, fe, qt, M, Y, T, D, Ce, jt, be, zt, ge, Rt, ke, Wt, we, $t, ve, Ut, Ee, Yt, Le, Kt, ye, Xt, Se, Jt, xe, Zt, _e, Qt, Ae, es, Oe, ts, Ne, ss, Te, is, K, vt;
 class fi {
   constructor({
     value: e,
@@ -52,7 +52,7 @@ class fi {
     searchCallback: x,
     openCallback: V,
     closeCallback: q,
-    keydownCallback: W,
+    keydownCallback: $,
     focusCallback: gt,
     blurCallback: re,
     nameChangeCallback: kt
@@ -114,7 +114,7 @@ class fi {
     r(this, "focusCallback");
     r(this, "blurCallback");
     r(this, "nameChangeCallback");
-    this.value = e, this.showTags = t, this.tagsCountText = s, this.searchable = h, this.placeholder = d, this.clearable = i, this.isAlwaysOpened = a, this.disabled = C, this.isSingleSelect = m, this.id = b, this.ariaLabel = g, this.iconElements = w, this.showPlaceholderOnOpen = v ?? !1, this.isOpened = !1, this.searchText = "", f(this, _, o(this, ge, Rt).call(this)), f(this, k, o(this, ye, Xt).call(this)), f(this, H, o(this, _e, Qt).call(this)), f(this, E, null), this.inputCallback = S, this.searchCallback = x, this.openCallback = V, this.closeCallback = q, this.keydownCallback = W, this.focusCallback = gt, this.blurCallback = re, this.nameChangeCallback = kt, this.srcElement = o(this, Ce, zt).call(this, n(this, _), n(this, k), n(this, H)), o(this, pe, Mt).call(this);
+    this.value = e, this.showTags = t, this.tagsCountText = s, this.searchable = h, this.placeholder = d, this.clearable = i, this.isAlwaysOpened = a, this.disabled = C, this.isSingleSelect = m, this.id = b, this.ariaLabel = g, this.iconElements = w, this.showPlaceholderOnOpen = v ?? !1, this.isOpened = !1, this.searchText = "", f(this, _, o(this, ge, Rt).call(this)), f(this, k, o(this, ye, Xt).call(this)), f(this, H, o(this, _e, Qt).call(this)), f(this, E, null), this.inputCallback = S, this.searchCallback = x, this.openCallback = V, this.closeCallback = q, this.keydownCallback = $, this.focusCallback = gt, this.blurCallback = re, this.nameChangeCallback = kt, this.srcElement = o(this, Ce, jt).call(this, n(this, _), n(this, k), n(this, H)), o(this, pe, Mt).call(this);
   }
   // Public methods
   focus() {
@@ -143,7 +143,7 @@ _ = new WeakMap(), k = new WeakMap(), H = new WeakMap(), E = new WeakMap(), pe =
   o(this, G, U).call(this), o(this, M, Y).call(this), o(this, me, Ft).call(this);
 }, G = new WeakSet(), U = function() {
   if (n(this, _).innerHTML = "", this.showTags) {
-    n(this, _).append(...o(this, ke, $t).call(this));
+    n(this, _).append(...o(this, ke, Wt).call(this));
     const e = mi(this.value);
     this.nameChangeCallback(e);
   } else {
@@ -166,22 +166,22 @@ _ = new WeakMap(), k = new WeakMap(), H = new WeakMap(), E = new WeakMap(), pe =
   this.isOpened = !this.isOpened, o(this, fe, qt).call(this);
   const e = n(this, _).querySelector(".treeselect-input__tags-count");
   this.isOpened ? (this.showPlaceholderOnOpen && this.isSingleSelect && this.value.length && (e == null || e.setAttribute("style", "display: none;"), n(this, k).setAttribute("placeholder", this.placeholder)), this.openCallback()) : (this.showPlaceholderOnOpen && this.isSingleSelect && this.value.length && (e == null || e.setAttribute("style", "display: block;"), n(this, k).removeAttribute("placeholder")), this.closeCallback());
-}, Ce = new WeakSet(), zt = function(e, t, s) {
+}, Ce = new WeakSet(), jt = function(e, t, s) {
   const i = document.createElement("div");
-  return i.classList.add("treeselect-input"), i.setAttribute("tabindex", "-1"), i.addEventListener("mousedown", (a) => o(this, be, jt).call(this, a)), i.addEventListener("focus", () => this.focusCallback(), !0), i.addEventListener("blur", () => this.blurCallback(), !0), e.appendChild(t), i.append(e, s), i;
-}, be = new WeakSet(), jt = function(e) {
+  return i.classList.add("treeselect-input"), i.setAttribute("tabindex", "-1"), i.addEventListener("mousedown", (a) => o(this, be, zt).call(this, a)), i.addEventListener("focus", () => this.focusCallback(), !0), i.addEventListener("blur", () => this.blurCallback(), !0), e.appendChild(t), i.append(e, s), i;
+}, be = new WeakSet(), zt = function(e) {
   e.stopPropagation(), this.isOpened || o(this, T, D).call(this), this.focus();
 }, ge = new WeakSet(), Rt = function() {
   const e = document.createElement("div");
   return e.classList.add("treeselect-input__tags"), e;
-}, ke = new WeakSet(), $t = function() {
+}, ke = new WeakSet(), Wt = function() {
   return this.value.map((e) => {
     const t = document.createElement("div");
     t.classList.add("treeselect-input__tags-element"), t.setAttribute("tabindex", "-1"), t.setAttribute("tag-id", e.id.toString()), t.setAttribute("title", e.name);
     const s = o(this, ve, Ut).call(this, e.name), i = o(this, Ee, Yt).call(this);
-    return t.addEventListener("mousedown", (a) => o(this, we, Wt).call(this, a, e.id)), t.append(s, i), t;
+    return t.addEventListener("mousedown", (a) => o(this, we, $t).call(this, a, e.id)), t.append(s, i), t;
   });
-}, we = new WeakSet(), Wt = function(e, t) {
+}, we = new WeakSet(), $t = function(e, t) {
   e.preventDefault(), e.stopPropagation(), this.removeItem(t), this.focus();
 }, ve = new WeakSet(), Ut = function(e) {
   const t = document.createElement("span");
@@ -394,10 +394,10 @@ const Et = (l, e, t, s) => {
   l.checked ? P(t.check, i) : l.isPartialChecked ? P(t.partialCheck, i) : i.innerHTML = "";
 }, Bi = (l, e, t, s, i, a) => {
   if (l.level === 0) {
-    const d = t.some((b) => b.isGroup && b.level === l.level), m = !l.isGroup && d ? `${i}px` : `${a}px`;
+    const d = t.some((b) => b.isGroup && b.level === l.level), C = !l.isGroup && d ? i : a, m = (l.isGroup ? a : C) + "px";
     s ? e.style.paddingRight = m : e.style.paddingLeft = m;
   } else {
-    const d = l.isGroup ? `${l.level * i}px` : `${l.level * i + i}px`;
+    const d = l.isGroup ? `${a + l.level * i}px` : `${a + l.level * i + i}px`;
     s ? e.style.paddingRight = d : e.style.paddingLeft = d;
   }
   e.setAttribute("level", l.level.toString()), e.setAttribute("group", l.isGroup.toString());
@@ -410,7 +410,7 @@ const Et = (l, e, t, s) => {
     typeof s == "string" && l.setAttribute(t, s);
   });
 };
-var F, I, L, X, Pe, ds, Ie, us, Be, ps, Ve, ms, De, fs, He, Cs, J, yt, Ge, bs, Me, gs, Fe, ks, Z, St, qe, ws, ze, vs, je, Es, Re, Ls, $e, ys, We, Ss, Ue, xs, Ye, _s, Ke, As, Xe, Os, Je, Ns, Q, xt, ee, _t, Ze, Ts;
+var F, I, L, X, Pe, ds, Ie, us, Be, ps, Ve, ms, De, fs, He, Cs, J, yt, Ge, bs, Me, gs, Fe, ks, Z, St, qe, ws, je, vs, ze, Es, Re, Ls, We, ys, $e, Ss, Ue, xs, Ye, _s, Ke, As, Xe, Os, Je, Ns, Q, xt, ee, _t, Ze, Ts;
 class Gi {
   constructor({
     options: e,
@@ -430,7 +430,7 @@ class Gi {
     zeroLevelItemPadding: x,
     inputCallback: V,
     arrowClickCallback: q,
-    mouseupCallback: W
+    mouseupCallback: $
   }) {
     // Private methods
     c(this, Pe);
@@ -445,11 +445,11 @@ class Gi {
     c(this, Fe);
     c(this, Z);
     c(this, qe);
-    c(this, ze);
     c(this, je);
+    c(this, ze);
     c(this, Re);
-    c(this, $e);
     c(this, We);
+    c(this, $e);
     c(this, Ue);
     c(this, Ye);
     c(this, Ke);
@@ -491,7 +491,7 @@ class Gi {
     c(this, I, !0);
     c(this, L, []);
     c(this, X, !0);
-    this.options = e, this.value = t, this.openLevel = s ?? 0, this.listSlotHtmlComponent = i ?? null, this.emptyText = a ?? "No results found...", this.isSingleSelect = h ?? !1, this.showCount = m ?? !1, this.disabledBranchNode = b ?? !1, this.expandSelected = g ?? !1, this.isIndependentNodes = w ?? !1, this.rtl = v ?? !1, this.defaultPadding = S ?? 20, this.zeroLevelItemPadding = x ?? 5, this.iconElements = d, this.unselectOnClickSingleSelected = C ?? !1, this.searchText = "", this.flattedOptions = wi(this.options, this.openLevel, this.isIndependentNodes), this.flattedOptionsBeforeSearch = this.flattedOptions, this.selectedNodes = { nodes: [], groupedNodes: [], allNodes: [] }, this.srcElement = o(this, Be, ps).call(this), this.inputCallback = V, this.arrowClickCallback = q, this.mouseupCallback = W, xi(this.flattedOptions);
+    this.options = e, this.value = t, this.openLevel = s ?? 0, this.listSlotHtmlComponent = i ?? null, this.emptyText = a ?? "No results found...", this.isSingleSelect = h ?? !1, this.showCount = m ?? !1, this.disabledBranchNode = b ?? !1, this.expandSelected = g ?? !1, this.isIndependentNodes = w ?? !1, this.rtl = v ?? !1, this.defaultPadding = S ?? 20, this.zeroLevelItemPadding = x ?? 5, this.iconElements = d, this.unselectOnClickSingleSelected = C ?? !1, this.searchText = "", this.flattedOptions = wi(this.options, this.openLevel, this.isIndependentNodes), this.flattedOptionsBeforeSearch = this.flattedOptions, this.selectedNodes = { nodes: [], groupedNodes: [], allNodes: [] }, this.srcElement = o(this, Be, ps).call(this), this.inputCallback = V, this.arrowClickCallback = q, this.mouseupCallback = $, xi(this.flattedOptions);
   }
   // Public methods
   updateValue(e) {
@@ -630,17 +630,17 @@ F = new WeakMap(), I = new WeakMap(), L = new WeakMap(), X = new WeakMap(), Pe =
 }, Z = new WeakSet(), St = function(e, t) {
   const s = o(this, qe, ws).call(this, e);
   if (t) {
-    const h = o(this, $e, ys).call(this);
+    const h = o(this, We, ys).call(this);
     s.appendChild(h), s.classList.add("treeselect-list__item--group");
   }
   const i = o(this, Ue, xs).call(this, e), a = o(this, Ye, _s).call(this, e, t);
   return s.append(i, a), s;
 }, qe = new WeakSet(), ws = function(e) {
   const t = document.createElement("div");
-  return Hi(t, e.htmlAttr), t.setAttribute("tabindex", "-1"), t.setAttribute("title", e.name), t.classList.add("treeselect-list__item"), t.addEventListener("mouseover", () => o(this, ze, vs).call(this, t), !0), t.addEventListener("mouseout", () => o(this, je, Es).call(this, t), !0), t.addEventListener("mousedown", (s) => o(this, Re, Ls).call(this, s, e)), t;
-}, ze = new WeakSet(), vs = function(e) {
+  return Hi(t, e.htmlAttr), t.setAttribute("tabindex", "-1"), t.setAttribute("title", e.name), t.classList.add("treeselect-list__item"), t.addEventListener("mouseover", () => o(this, je, vs).call(this, t), !0), t.addEventListener("mouseout", () => o(this, ze, Es).call(this, t), !0), t.addEventListener("mousedown", (s) => o(this, Re, Ls).call(this, s, e)), t;
+}, je = new WeakSet(), vs = function(e) {
   n(this, I) && o(this, Q, xt).call(this, !0, e);
-}, je = new WeakSet(), Es = function(e) {
+}, ze = new WeakSet(), Es = function(e) {
   n(this, I) && (o(this, Q, xt).call(this, !1, e), f(this, F, e));
 }, Re = new WeakSet(), Ls = function(e, t) {
   var a;
@@ -648,10 +648,10 @@ F = new WeakMap(), I = new WeakMap(), L = new WeakMap(), X = new WeakMap(), Pe =
     return;
   const i = e.target.querySelector(".treeselect-list__item-checkbox");
   i.checked = !i.checked, o(this, Xe, Os).call(this, i, t);
-}, $e = new WeakSet(), ys = function() {
+}, We = new WeakSet(), ys = function() {
   const e = document.createElement("span");
-  return e.setAttribute("tabindex", "-1"), e.classList.add("treeselect-list__item-icon"), P(this.iconElements.arrowDown, e), e.addEventListener("mousedown", (t) => o(this, We, Ss).call(this, t)), e;
-}, We = new WeakSet(), Ss = function(e) {
+  return e.setAttribute("tabindex", "-1"), e.classList.add("treeselect-list__item-icon"), P(this.iconElements.arrowDown, e), e.addEventListener("mousedown", (t) => o(this, $e, Ss).call(this, t)), e;
+}, $e = new WeakSet(), Ss = function(e) {
   e.preventDefault(), e.stopPropagation(), o(this, Je, Ns).call(this, e);
 }, Ue = new WeakSet(), xs = function(e) {
   const t = document.createElement("div");
@@ -743,8 +743,8 @@ const Gt = ({
   }
   return l;
 };
-var u, p, z, te, j, A, O, y, B, se, At, ie, Ot, Qe, Ps, et, Is, tt, Bs, st, Vs, it, Ds, lt, Hs, le, Nt, nt, Gs, at, Ms, ot, Fs, rt, qs, ne, Tt, ct, zs, R, de, ae, Pt, $, ue, ht, js, oe, It, dt, Rs, ut, $s, pt, Ws, mt, Us, ft, Ys;
-class zi {
+var u, p, j, te, z, A, O, y, B, se, At, ie, Ot, Qe, Ps, et, Is, tt, Bs, st, Vs, it, Ds, lt, Hs, le, Nt, nt, Gs, at, Ms, ot, Fs, rt, qs, ne, Tt, ct, js, R, de, ae, Pt, W, ue, ht, zs, oe, It, dt, Rs, ut, Ws, pt, $s, mt, Us, ft, Ys;
+class ji {
   constructor({
     parentHtmlContainer: e,
     value: t,
@@ -763,7 +763,7 @@ class zi {
     disabled: x,
     emptyText: V,
     staticList: q,
-    id: W,
+    id: $,
     ariaLabel: gt,
     isSingleSelect: re,
     showCount: kt,
@@ -802,7 +802,7 @@ class zi {
     c(this, ct);
     c(this, R);
     c(this, ae);
-    c(this, $);
+    c(this, W);
     c(this, ht);
     // Emits
     c(this, oe);
@@ -861,11 +861,11 @@ class zi {
     c(this, u, null);
     c(this, p, null);
     // Resize props
-    c(this, z, null);
+    c(this, j, null);
     // List position scroll
     c(this, te, 0);
     // Timer for search text
-    c(this, j, 0);
+    c(this, z, 0);
     // Outside listeners
     c(this, A, null);
     c(this, O, null);
@@ -877,7 +877,7 @@ class zi {
       staticList: q,
       appendToBody: a,
       isSingleSelect: re
-    }), this.parentHtmlContainer = e, this.value = [], this.options = s ?? [], this.openLevel = i ?? 0, this.appendToBody = a ?? !1, this.alwaysOpen = !!(h && !x), this.showTags = d ?? !0, this.tagsCountText = C ?? "elements selected", this.clearable = m ?? !0, this.searchable = b ?? !0, this.placeholder = g ?? "Search...", this.grouped = w ?? !0, this.isGroupedValue = v ?? !1, this.listSlotHtmlComponent = S ?? null, this.disabled = x ?? !1, this.emptyText = V ?? "No results found...", this.staticList = !!(q && !this.appendToBody), this.id = W ?? "", this.ariaLabel = gt ?? "", this.isSingleSelect = re ?? !1, this.showCount = kt ?? !1, this.disabledBranchNode = Ks ?? !1, this.direction = Xs ?? "auto", this.expandSelected = Js ?? !1, this.saveScrollPosition = Zs ?? !0, this.isIndependentNodes = Qs ?? !1, this.rtl = ei ?? !1, this.defaultPadding = ti ?? 20, this.zeroLevelItemPadding = si ?? 5, this.iconElements = Dt(ii), this.showPlaceholderOnOpen = li ?? !1, this.unselectOnClickSingleSelected = ni ?? !1, this.inputCallback = ai, this.openCallback = oi, this.closeCallback = ri, this.nameChangeCallback = ci, this.searchCallback = hi, this.openCloseGroupCallback = di, this.ungroupedValue = [], this.groupedValue = [], this.allValue = [], this.isListOpened = !1, this.selectedName = "", this.srcElement = null, o(this, se, At).call(this, t);
+    }), this.parentHtmlContainer = e, this.value = [], this.options = s ?? [], this.openLevel = i ?? 0, this.appendToBody = a ?? !1, this.alwaysOpen = !!(h && !x), this.showTags = d ?? !0, this.tagsCountText = C ?? "elements selected", this.clearable = m ?? !0, this.searchable = b ?? !0, this.placeholder = g ?? "Search...", this.grouped = w ?? !0, this.isGroupedValue = v ?? !1, this.listSlotHtmlComponent = S ?? null, this.disabled = x ?? !1, this.emptyText = V ?? "No results found...", this.staticList = !!(q && !this.appendToBody), this.id = $ ?? "", this.ariaLabel = gt ?? "", this.isSingleSelect = re ?? !1, this.showCount = kt ?? !1, this.disabledBranchNode = Ks ?? !1, this.direction = Xs ?? "auto", this.expandSelected = Js ?? !1, this.saveScrollPosition = Zs ?? !0, this.isIndependentNodes = Qs ?? !1, this.rtl = ei ?? !1, this.defaultPadding = ti ?? 20, this.zeroLevelItemPadding = si ?? 5, this.iconElements = Dt(ii), this.showPlaceholderOnOpen = li ?? !1, this.unselectOnClickSingleSelected = ni ?? !1, this.inputCallback = ai, this.openCallback = oi, this.closeCallback = ri, this.nameChangeCallback = ci, this.searchCallback = hi, this.openCloseGroupCallback = di, this.ungroupedValue = [], this.groupedValue = [], this.allValue = [], this.isListOpened = !1, this.selectedName = "", this.srcElement = null, o(this, se, At).call(this, t);
   }
   mount() {
     Gt({
@@ -893,7 +893,7 @@ class zi {
     s && (s.updateValue(t), o(this, le, Nt).call(this, s == null ? void 0 : s.selectedNodes));
   }
   destroy() {
-    this.srcElement && (o(this, ne, Tt).call(this), this.srcElement.innerHTML = "", this.srcElement = null, o(this, $, ue).call(this, !0));
+    this.srcElement && (o(this, ne, Tt).call(this), this.srcElement.innerHTML = "", this.srcElement = null, o(this, W, ue).call(this, !0));
   }
   focus() {
     n(this, p) && n(this, p).focus();
@@ -907,11 +907,11 @@ class zi {
   }
   focusWindowHandler(e) {
     var s, i, a;
-    ((s = this.srcElement) == null ? void 0 : s.contains(e.target)) || ((i = n(this, u)) == null ? void 0 : i.srcElement.contains(e.target)) || ((a = n(this, p)) == null || a.blur(), o(this, $, ue).call(this, !1), o(this, R, de).call(this, !1));
+    ((s = this.srcElement) == null ? void 0 : s.contains(e.target)) || ((i = n(this, u)) == null ? void 0 : i.srcElement.contains(e.target)) || ((a = n(this, p)) == null || a.blur(), o(this, W, ue).call(this, !1), o(this, R, de).call(this, !1));
   }
   blurWindowHandler() {
     var e;
-    (e = n(this, p)) == null || e.blur(), o(this, $, ue).call(this, !1), o(this, R, de).call(this, !1);
+    (e = n(this, p)) == null || e.blur(), o(this, W, ue).call(this, !1), o(this, R, de).call(this, !1);
   }
   // Update direction of the list. Support appendToBody and standard mode with absolute
   updateListPosition() {
@@ -932,10 +932,10 @@ class zi {
       t.style.transform = `translate(${x}px,${V}px)`, t.style.width = `${d}px`;
     }
     const w = g ? "top" : "bottom";
-    t.getAttribute("direction") !== w && (t.setAttribute("direction", w), o(this, ct, zs).call(this, g, this.appendToBody));
+    t.getAttribute("direction") !== w && (t.setAttribute("direction", w), o(this, ct, js).call(this, g, this.appendToBody));
   }
 }
-u = new WeakMap(), p = new WeakMap(), z = new WeakMap(), te = new WeakMap(), j = new WeakMap(), A = new WeakMap(), O = new WeakMap(), y = new WeakMap(), B = new WeakMap(), se = new WeakSet(), At = function(e) {
+u = new WeakMap(), p = new WeakMap(), j = new WeakMap(), te = new WeakMap(), z = new WeakMap(), A = new WeakMap(), O = new WeakMap(), y = new WeakMap(), B = new WeakMap(), se = new WeakSet(), At = function(e) {
   var a;
   this.destroy();
   const { container: t, list: s, input: i } = o(this, Qe, Ps).call(this);
@@ -998,7 +998,7 @@ u = new WeakMap(), p = new WeakMap(), z = new WeakMap(), te = new WeakMap(), j =
     blurCallback: () => o(this, lt, Hs).call(this),
     nameChangeCallback: (i) => o(this, ot, Fs).call(this, i)
   });
-  return this.appendToBody && f(this, z, new ResizeObserver(() => this.updateListPosition())), e.append(s.srcElement), { container: e, list: t, input: s };
+  return this.appendToBody && f(this, j, new ResizeObserver(() => this.updateListPosition())), e.append(s.srcElement), { container: e, list: t, input: s };
 }, et = new WeakSet(), Is = function(e) {
   var i, a;
   const t = ce(e);
@@ -1009,7 +1009,7 @@ u = new WeakMap(), p = new WeakMap(), z = new WeakMap(), te = new WeakMap(), j =
   var t;
   this.isListOpened && ((t = n(this, u)) == null || t.callKeyAction(e));
 }, st = new WeakSet(), Vs = function(e) {
-  n(this, j) && clearTimeout(n(this, j)), f(this, j, window.setTimeout(() => {
+  n(this, z) && clearTimeout(n(this, z)), f(this, z, window.setTimeout(() => {
     var t;
     (t = n(this, u)) == null || t.updateSearchValue(e), this.updateListPosition();
   }, 350)), o(this, mt, Us).call(this, e);
@@ -1037,11 +1037,11 @@ u = new WeakMap(), p = new WeakMap(), z = new WeakMap(), te = new WeakMap(), j =
   this.selectedName !== e && (this.selectedName = e, o(this, dt, Rs).call(this));
 }, rt = new WeakSet(), qs = function() {
   var e;
-  this.isListOpened = !0, n(this, A) && n(this, O) && (window.addEventListener("scroll", n(this, A), !0), window.addEventListener("resize", n(this, O))), !(!n(this, u) || !this.srcElement) && (this.appendToBody ? (document.body.appendChild(n(this, u).srcElement), (e = n(this, z)) == null || e.observe(this.srcElement)) : this.srcElement.appendChild(n(this, u).srcElement), this.updateListPosition(), o(this, ae, Pt).call(this, !0), o(this, ht, js).call(this), o(this, ut, $s).call(this));
+  this.isListOpened = !0, n(this, A) && n(this, O) && (window.addEventListener("scroll", n(this, A), !0), window.addEventListener("resize", n(this, O))), !(!n(this, u) || !this.srcElement) && (this.appendToBody ? (document.body.appendChild(n(this, u).srcElement), (e = n(this, j)) == null || e.observe(this.srcElement)) : this.srcElement.appendChild(n(this, u).srcElement), this.updateListPosition(), o(this, ae, Pt).call(this, !0), o(this, ht, zs).call(this), o(this, ut, Ws).call(this));
 }, ne = new WeakSet(), Tt = function() {
   var t;
-  this.alwaysOpen || (this.isListOpened = !1, n(this, A) && n(this, O) && (window.removeEventListener("scroll", n(this, A), !0), window.removeEventListener("resize", n(this, O))), !n(this, u) || !this.srcElement) || !(this.appendToBody ? document.body.contains(n(this, u).srcElement) : this.srcElement.contains(n(this, u).srcElement)) || (f(this, te, n(this, u).srcElement.scrollTop), this.appendToBody ? (document.body.removeChild(n(this, u).srcElement), (t = n(this, z)) == null || t.disconnect()) : this.srcElement.removeChild(n(this, u).srcElement), o(this, ae, Pt).call(this, !1), o(this, pt, Ws).call(this));
-}, ct = new WeakSet(), zs = function(e, t) {
+  this.alwaysOpen || (this.isListOpened = !1, n(this, A) && n(this, O) && (window.removeEventListener("scroll", n(this, A), !0), window.removeEventListener("resize", n(this, O))), !n(this, u) || !this.srcElement) || !(this.appendToBody ? document.body.contains(n(this, u).srcElement) : this.srcElement.contains(n(this, u).srcElement)) || (f(this, te, n(this, u).srcElement.scrollTop), this.appendToBody ? (document.body.removeChild(n(this, u).srcElement), (t = n(this, j)) == null || t.disconnect()) : this.srcElement.removeChild(n(this, u).srcElement), o(this, ae, Pt).call(this, !1), o(this, pt, $s).call(this));
+}, ct = new WeakSet(), js = function(e, t) {
   if (!n(this, u) || !n(this, p))
     return;
   const s = t ? "treeselect-list--top-to-body" : "treeselect-list--top", i = t ? "treeselect-list--bottom-to-body" : "treeselect-list--bottom";
@@ -1051,9 +1051,9 @@ u = new WeakMap(), p = new WeakMap(), z = new WeakMap(), te = new WeakMap(), j =
 }, ae = new WeakSet(), Pt = function(e) {
   var t, s, i, a;
   e ? (t = n(this, p)) == null || t.srcElement.classList.add("treeselect-input--opened") : (s = n(this, p)) == null || s.srcElement.classList.remove("treeselect-input--opened"), this.staticList ? (i = n(this, u)) == null || i.srcElement.classList.add("treeselect-list--static") : (a = n(this, u)) == null || a.srcElement.classList.remove("treeselect-list--static");
-}, $ = new WeakSet(), ue = function(e) {
+}, W = new WeakSet(), ue = function(e) {
   !n(this, A) || !n(this, O) || !n(this, y) || !n(this, B) || ((!this.alwaysOpen || e) && (window.removeEventListener("scroll", n(this, A), !0), window.removeEventListener("resize", n(this, O))), document.removeEventListener("mousedown", n(this, y), !0), document.removeEventListener("focus", n(this, y), !0), window.removeEventListener("blur", n(this, B)));
-}, ht = new WeakSet(), js = function() {
+}, ht = new WeakSet(), zs = function() {
   var t, s, i;
   const e = (t = n(this, u)) == null ? void 0 : t.isLastFocusedElementExist();
   this.saveScrollPosition && e ? (s = n(this, u)) == null || s.srcElement.scroll(0, n(this, te)) : (i = n(this, u)) == null || i.focusFirstListElement();
@@ -1063,10 +1063,10 @@ u = new WeakMap(), p = new WeakMap(), z = new WeakMap(), te = new WeakMap(), j =
 }, dt = new WeakSet(), Rs = function() {
   var e;
   (e = this.srcElement) == null || e.dispatchEvent(new CustomEvent("name-change", { detail: this.selectedName })), this.nameChangeCallback && this.nameChangeCallback(this.selectedName);
-}, ut = new WeakSet(), $s = function() {
+}, ut = new WeakSet(), Ws = function() {
   var e;
   this.alwaysOpen || ((e = this.srcElement) == null || e.dispatchEvent(new CustomEvent("open", { detail: this.value })), this.openCallback && this.openCallback(this.value));
-}, pt = new WeakSet(), Ws = function() {
+}, pt = new WeakSet(), $s = function() {
   var e;
   this.alwaysOpen || ((e = this.srcElement) == null || e.dispatchEvent(new CustomEvent("close", { detail: this.value })), this.closeCallback && this.closeCallback(this.value));
 }, mt = new WeakSet(), Us = function(e) {
@@ -1078,5 +1078,5 @@ u = new WeakMap(), p = new WeakMap(), z = new WeakMap(), te = new WeakMap(), j =
   (s = this.srcElement) == null || s.dispatchEvent(new CustomEvent("open-close-group", { detail: { groupId: e, isClosed: t } })), this.openCloseGroupCallback && this.openCloseGroupCallback(e, t);
 };
 export {
-  zi as default
+  ji as default
 };
