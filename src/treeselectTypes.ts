@@ -94,6 +94,8 @@ export interface ITreeselectParams {
   defaultPadding?: number
   zeroLevelItemPadding?: number
   iconElements?: Partial<IconsType>
+  showPlaceholderOnOpen?: boolean
+  unselectOnClickSingleSelected?: boolean
   inputCallback?: (value: ValueType) => void
   openCallback?: (value: ValueType) => void
   closeCallback?: (value: ValueType) => void

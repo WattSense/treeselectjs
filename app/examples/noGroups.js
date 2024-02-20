@@ -43,7 +43,9 @@ export const runNoGroupsExample = (Treeselect) => {
     options: options,
     isSingleSelect: true,
     showTags: false,
-    zeroLevelItemPadding: 20
+    zeroLevelItemPadding: 20,
+    showPlaceholderOnOpen: true,
+    unselectOnClickSingleSelected: true,
   })
 
   treeselect.srcElement.addEventListener('input', (e) => {

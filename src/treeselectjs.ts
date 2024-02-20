@@ -107,6 +107,8 @@ export default class Treeselect implements ITreeselect {
   defaultPadding: number
   zeroLevelItemPadding: number
   iconElements: IconsType
+  showPlaceholderOnOpen: boolean
+  unselectOnClickSingleSelected: boolean
   inputCallback: ((value: ValueType) => void) | undefined
   openCallback: ((value: ValueType) => void) | undefined
   closeCallback: ((value: ValueType) => void) | undefined
@@ -172,6 +174,8 @@ export default class Treeselect implements ITreeselect {
     defaultPadding,
     zeroLevelItemPadding,
     iconElements,
+    showPlaceholderOnOpen,
+    unselectOnClickSingleSelected,
     inputCallback,
     openCallback,
     closeCallback,
@@ -217,6 +221,8 @@ export default class Treeselect implements ITreeselect {
     this.defaultPadding = defaultPadding ?? 20
     this.zeroLevelItemPadding = zeroLevelItemPadding ?? 5
     this.iconElements = getDefaultIcons(iconElements)
+    this.showPlaceholderOnOpen = showPlaceholderOnOpen ?? false
+    this.unselectOnClickSingleSelected = unselectOnClickSingleSelected ?? false
     this.inputCallback = inputCallback
     this.openCallback = openCallback
     this.closeCallback = closeCallback
@@ -357,6 +363,7 @@ export default class Treeselect implements ITreeselect {
       defaultPadding: this.defaultPadding,
       zeroLevelItemPadding: this.zeroLevelItemPadding,
       iconElements: this.iconElements,
+      unselectOnClickSingleSelected: this.unselectOnClickSingleSelected,
       inputCallback: (value) => this.#listInputListener(value),
       arrowClickCallback: (groupId, isClosed) => this.#listArrowClickListener(groupId, isClosed),
       mouseupCallback: () => this.#treeselectInput?.focus()
@@ -375,6 +382,7 @@ export default class Treeselect implements ITreeselect {
       id: this.id,
       ariaLabel: this.ariaLabel,
       iconElements: this.iconElements,
+      showPlaceholderOnOpen: this.showPlaceholderOnOpen,
       inputCallback: (value) => this.#inputInputListener(value),
       searchCallback: (value) => this.#inputSearchListener(value),
       openCallback: () => this.#openList(),

@@ -15,6 +15,7 @@ export interface ITreeselectListParams {
   defaultPadding: number
   zeroLevelItemPadding: number
   iconElements: IconsType
+  unselectOnClickSingleSelected: boolean
   inputCallback: (value: SelectedNodesType) => void
   arrowClickCallback: (groupId: ValueOptionType, isClosed: boolean) => void
   mouseupCallback: () => void
