@@ -42,6 +42,8 @@ export interface ITreeselect {
   saveScrollPosition: boolean
   isIndependentNodes: boolean
   rtl: boolean
+  defaultPadding: number
+  zeroLevelItemPadding: number
   iconElements: IconsType
   ungroupedValue: ValueOptionType[]
   groupedValue: ValueOptionType[]
@@ -89,6 +91,8 @@ export interface ITreeselectParams {
   saveScrollPosition?: boolean
   isIndependentNodes?: boolean
   rtl?: boolean
+  defaultPadding?: number
+  zeroLevelItemPadding?: number
   iconElements?: Partial<IconsType>
   showPlaceholderOnOpen?: boolean
   unselectOnClickSingleSelected?: boolean

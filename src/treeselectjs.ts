@@ -104,6 +104,8 @@ export default class Treeselect implements ITreeselect {
   saveScrollPosition: boolean
   isIndependentNodes: boolean
   rtl: boolean
+  defaultPadding: number
+  zeroLevelItemPadding: number
   iconElements: IconsType
   showPlaceholderOnOpen: boolean
   unselectOnClickSingleSelected: boolean
@@ -169,6 +171,8 @@ export default class Treeselect implements ITreeselect {
     saveScrollPosition,
     isIndependentNodes,
     rtl,
+    defaultPadding,
+    zeroLevelItemPadding,
     iconElements,
     showPlaceholderOnOpen,
     unselectOnClickSingleSelected,
@@ -214,6 +218,8 @@ export default class Treeselect implements ITreeselect {
     this.saveScrollPosition = saveScrollPosition ?? true
     this.isIndependentNodes = isIndependentNodes ?? false
     this.rtl = rtl ?? false
+    this.defaultPadding = defaultPadding ?? 20
+    this.zeroLevelItemPadding = zeroLevelItemPadding ?? 5
     this.iconElements = getDefaultIcons(iconElements)
     this.showPlaceholderOnOpen = showPlaceholderOnOpen ?? false
     this.unselectOnClickSingleSelected = unselectOnClickSingleSelected ?? false
@@ -354,6 +360,8 @@ export default class Treeselect implements ITreeselect {
       expandSelected: this.expandSelected,
       isIndependentNodes: this.isIndependentNodes,
       rtl: this.rtl,
+      defaultPadding: this.defaultPadding,
+      zeroLevelItemPadding: this.zeroLevelItemPadding,
       iconElements: this.iconElements,
       unselectOnClickSingleSelected: this.unselectOnClickSingleSelected,
       inputCallback: (value) => this.#listInputListener(value),
