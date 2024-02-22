@@ -1,5 +1,9 @@
 import { ValueOptionType, FlattedOptionType } from '../../treeselectTypes'
 import { getChildrenOptions } from './listOptionsHelper'
+import { removeDiacritics } from './diacriticsMap'
+
+export const normalizeText = (text: string) =>
+  removeDiacritics(text).toLowerCase().replace(/[\W_]/gim, ' ').replace(/\s+/g, ' ')
 
 export const hideShowChildrenOptions = (
   flattedOptions: FlattedOptionType[],
@@ -45,8 +49,9 @@ export const updateVisibleBySearchFlattedOptions = (flattedOptions: FlattedOptio
 }
 
 const getSearchedFlattedOptions = (flattedOptions: FlattedOptionType[], searchText: string) => {
+  const normalizedSearchText = normalizeText(searchText)
   return flattedOptions.reduce((acc, curr) => {
-    const isSearched = curr.name.toLowerCase().includes(searchText.toLowerCase())
+    const isSearched = normalizeText(curr.name).includes(normalizedSearchText)
 
     if (isSearched) {
       acc.push(curr)

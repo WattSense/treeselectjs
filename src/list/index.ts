@@ -5,7 +5,8 @@ import { updateOptionByCheckState, updateOptionsByValue } from './helpers/listCh
 import {
   hideShowChildrenOptions,
   updateVisibleBySearchFlattedOptions,
-  expandSelectedItems
+  expandSelectedItems,
+  normalizeText
 } from './helpers/listVisibilityStateHelper'
 import { appendIconToElement } from '../svgIcons'
 
@@ -332,7 +333,7 @@ export class TreeselectList implements ITreeselectList {
     }
 
     const isStartOfSearching = this.searchText === '' && searchText !== ''
-    this.searchText = searchText
+    this.searchText = normalizeText(searchText)
 
     if (isStartOfSearching) {
       this.flattedOptionsBeforeSearch = JSON.parse(JSON.stringify(this.flattedOptions))
